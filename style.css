@@ -58,6 +58,7 @@ body {
 	line-height: 1.5;
 	background-color: hsl(var(--light));
 	color: hsl(var(--clr-dark-gray-blue));
+	font-family: var(--ff-sans-normal);
 	min-height: 100vh;
 	text-rendering: optimizeSpeed;
 }
@@ -189,4 +190,49 @@ select {
 .fs-700,
 .fs-600 {
 	line-height: 1.1;
+}
+
+/* -----------*/
+/* Components */
+/* -----------*/
+.header {
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.header::after {
+	content: '';
+	position: absolute;
+	width: 95%;
+	height: 100%;
+	margin: 2rem 0;
+	border-bottom: 0.05em solid hsl(var(--clr-dark-gray-blue));
+}
+.brand-plus {
+	align-items: center;
+}
+.primary-navigation li {
+	list-style: none;
+}
+.primary-navigation a {
+	text-decoration: none;
+}
+
+.underline-indicators > * {
+	cursor: pointer;
+	padding: var(--underline-gap, 1rem) 0;
+}
+
+.underline-indicators .active {
+	border-bottom: 0.2rem solid hsl(var(--clr-accent));
+}
+
+.cart-plus {
+	align-items: center;
+}
+
+.shopper {
+	width: 3em;
+	height: 3em;
 }
