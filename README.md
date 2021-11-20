@@ -38,6 +38,9 @@ Users should be able to:
 
 ### Links
 
+- Solution URL: [Vanilla Checkout Sneakers Store page](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6/hub/vanilla-checkout-sneakers-store-page-Lgx5NCGem)
+- Live Site URL: [Sneakers Store page](https://abu-hasib.github.io/sneakers-ecommerce-mini/)
+
 ## My process
 
 I went with the vanilla way. Even though it took longer but it was worth it. I got to play around with different way doing things.
