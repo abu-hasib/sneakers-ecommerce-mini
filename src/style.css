@@ -196,7 +196,7 @@ select {
 	.grid-container {
 		column-gap: var(--container-gap, 1rem);
 		grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(1rem, 1fr);
-		padding: clamp(4em, 1vh, 5em) clamp(2em, 1vw, 15em);
+		padding: 5em 15em;
 	}
 
 	.grid-container > *:first-child {
