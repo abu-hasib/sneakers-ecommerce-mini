@@ -15,20 +15,14 @@ const increase = document.querySelector('#increase');
 const decrease = document.querySelector('#decrease');
 const count = document.querySelector('#count');
 const test = document.querySelector('.cart-icon');
-// let quantity = 0;
+// let quantity =0;
 let amount = 0;
 let price = 125.0;
-
-console.log('##: ', test.getAttribute('data-quantity'));
 
 increase.addEventListener('click', () => {
 	let quantity = count.innerHTML;
 	quantity = Number(quantity) + 1;
-	console.log(quantity);
 	count.innerHTML = quantity;
-	// test.setAttribute('data-quantity', quantity);
-	console.log(quantity);
-	// handleClick(quantity);
 });
 
 decrease.addEventListener('click', () => {
@@ -75,7 +69,6 @@ cart.addEventListener('click', (e) => {
 	} else {
 		cart2.setAttribute('data-show', false);
 	}
-	console.log('cart', cart2.getAttribute('data-show'));
 });
 
 open.addEventListener('click', () => {
