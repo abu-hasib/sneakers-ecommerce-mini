@@ -139,6 +139,7 @@ select {
 	background: hsl(var(--light));
 	text-align: center;
 	height: 30vh;
+	min-width: 20%;
 	z-index: 1;
 	border-radius: 0.5em;
 	box-shadow: -3px 12px 22px 12px rgba(0, 0, 0, 0.13);
@@ -195,7 +196,7 @@ select {
 	.grid-container {
 		column-gap: var(--container-gap, 1rem);
 		grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(1rem, 1fr);
-		padding: 6em 20em;
+		padding: 5em 15em;
 	}
 
 	.grid-container > *:first-child {
@@ -216,7 +217,7 @@ select {
 
 	.thumbnails *:hover:before {
 		content: '';
-		background-color: hsl(var(--clr-pale) / 0.25);
+		background-color: hsl(var(--clr-pale) / 0.5);
 		position: absolute;
 		inset: 0;
 		z-index: 1;
@@ -272,7 +273,7 @@ select {
 	border: 2px solid hsl(var(--clr-accent));
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 35rem) {
 	.header {
 		background-color: hsl(var(--light));
 		padding-block: 1em;
@@ -280,7 +281,7 @@ select {
 	}
 
 	#product {
-		max-height: 30vh;
+		max-height: clamp(40vh, 7vh, 50vh);
 	}
 
 	.grid-container {
@@ -588,12 +589,21 @@ select {
 .quantity-btn > a {
 	text-decoration: none;
 }
+
+.quantity-btn > a:hover {
+	color: hsl(var(--clr-accent) / 0.7);
+}
+
 .cta {
 	padding: 0.8em 3em;
 	border-radius: 0.5em;
 	align-items: center;
 	justify-content: center;
 	box-shadow: -3px 12px 22px 12px hsl(var(--clr-accent) / 0.25);
+}
+
+.cta:hover {
+	background-color: hsl(var(--clr-accent) / 0.7);
 }
 
 .cta > a {
@@ -611,9 +621,9 @@ select {
 	position: relative;
 }
 
-.selected:focus::before {
+.selected::before {
 	content: '';
-	background-color: red;
+	background-color: hsl(var(--clr-pale) / 0.8);
 	position: absolute;
 	inset: 0;
 	z-index: 1;

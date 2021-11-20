@@ -105,7 +105,7 @@ function handleClick(quantity) {
       </div>
       <img onclick="handleRemove()" src="../images/icon-delete.svg" alt="cart icon" style="width: 1em; height: 1em;" class="pointer"/>
     </div>
-    <div class="flex cta bg-accent pointer" style="width: 100%;">
+    <div class="flex cta bg-accent pointer" style="width: 100%; box-shadow: none;">
       <a href="" class="text-light" style="font-weight: bold; width: 100%;">Checkout</a>
     </div>
 `;
