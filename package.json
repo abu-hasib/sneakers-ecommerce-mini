@@ -1,0 +1,11 @@
+{
+  "name": "ecommerce-product-page-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/abu-hasib/sneakers-ecommerce-mini.git",
+  "author": "Ridwan Abiola <ricklick262@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lightbox2": "^2.11.3"
+  }
+}

@@ -6,9 +6,11 @@
 		<!-- displays site properly based on user's device -->
 
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-		<!-- custom css -->
-		<link rel="stylesheet" href="style.css" />
 
+		<!-- custom css -->
+		<link rel="stylesheet" href="src/style.css" />
+		<!-- lightbox -->
+		<link rel="stylesheet" href="./node_modules/lightbox2/dist/css/lightbox.min.css" />
 		<!-- google fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +19,10 @@
 			rel="stylesheet"
 		/>
 
+		<!-- ligthbox -->
+		<script src="./node_modules/lightbox2/dist/js/lightbox.js" defer></script>
+		<script src="./node_modules/lightbox2/dist/js/lightbox-plus-jquery.js" defer></script>
+		<script src="src/index.js" defer></script>
 		<title>Frontend Mentor | E-commerce product page</title>
 
 		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -25,19 +31,30 @@
 				font-size: 11px;
 				text-align: center;
 			}
+
 			.attribution a {
 				color: hsl(228, 45%, 44%);
 			}
 		</style>
 	</head>
+
 	<body>
+		<div class="cover" data-cover="false"></div>
 		<header class="flex container header">
 			<div class="flex brand-plus">
-				<div>
-					<img src="./images/logo.svg" alt="sneaker brand" srcset="" />
+				<button class="nav-toggle" aria-controls="navigation">
+					<span class="sr-only" aria-expanded="false">Menu</span>
+				</button>
+				<div class="brand pointer">
+					<img src="./images/logo.svg" alt="sneaker brand" />
 				</div>
 				<nav>
-					<ul class="primary-navigation underline-indicators flex" style="--gap: 2rem">
+					<ul
+						id="navigation"
+						data-open="false"
+						class="primary-navigation underline-indicators flex"
+						style="--gap: 2rem"
+					>
 						<li class="active">
 							<a class="text-gray" href="#">Collections</a>
 						</li>
@@ -57,17 +74,109 @@
 				</nav>
 			</div>
 			<div class="flex cart-plus">
-				<img src="./images/icon-cart.svg" alt="cart icon" srcset="" />
-				<img src="./images/image-avatar.png" alt="shopper avatar" class="shopper" />
+				<div class="cart-icon pointer" data-quantity aria-controls="cart" onclick="handleClick">
+					<img src="./images/icon-cart.svg" alt="cart icon" />
+				</div>
+				<img src="./images/image-avatar.png" alt="shopper avatar" class="shopper pointer" />
 			</div>
 		</header>
-		Sneaker Company Fall Limited Edition Sneakers These low-profile sneakers are your perfect casual
-		wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather
-		can offer. $125.00 50% $250.00 0 Add to cart
-		<div class="attribution">
-			Challenge by
-			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-			Coded by <a href="#">Your Name Here</a>.
+		<div id="cart" class="cart grid" data-show="false">
+			<h3>Cart</h3>
+			<p>Your cart is empty</p>
+		</div>
+		<div class="grid grid-container" style="--container-gap: 4rem">
+			<div class="grid hero" style="place-items: center; --gap: 2rem">
+				<div>
+					<a
+						href="images/image-product-1.jpg"
+						data-lightbox="roadtrip"
+						data-title="My caption"
+						id="product"
+					>
+						<img src="images/image-product-1.jpg" alt="product one thumbnail"
+					/></a>
+					<a href="images/image-product-2.jpg" data-lightbox="roadtrip" data-title="My caption">
+					</a>
+					<a href="images/image-product-3.jpg" data-lightbox="roadtrip" data-title="My caption">
+					</a>
+					<a href="images/image-product-4.jpg" data-lightbox="roadtrip" data-title="My caption">
+					</a>
+				</div>
+
+				<div class="flex thumbnails" style="--gap: 1.2rem">
+					<a data-title="My caption" class="pointer">
+						<img
+							src="images/image-product-1-thumbnail.jpg"
+							alt="product one thumbnail"
+							data-src="images/image-product-1.jpg"
+							class="selected"
+					/></a>
+					<a class="pointer"
+						><img
+							src="images/image-product-2-thumbnail.jpg"
+							alt="product two thumbnail"
+							data-src="images/image-product-2.jpg"
+					/></a>
+					<a class="pointer"
+						><img
+							src="images/image-product-3-thumbnail.jpg"
+							alt="product three thumbnail"
+							data-src="images/image-product-3.jpg"
+					/></a>
+					<a class="pointer"
+						><img
+							src="images/image-product-4-thumbnail.jpg"
+							alt="product four thumbnail"
+							data-src="images/image-product-4.jpg"
+					/></a>
+				</div>
+			</div>
+			<div class="flow" style="--flow-space: 2rem">
+				<span class="fs-200 uppercase text-accent block letter-spacing-3" style="font-weight: bold">
+					Sneaker Company</span
+				>
+				<h1 class="text-dark fs-600 letter-spacing-3">
+					Fall Limited Edition <span class="block">Sneakers</span>
+				</h1>
+				<p>
+					These low-profile sneakers are your perfect casual wear <br />
+					companion. Featuring a durable rubber outer sole, they’ll <br />
+					withstand everything the weather can offer.
+				</p>
+				<div class="flex price-group">
+					<div class="flex price">
+						<h2 class="text-dark fs-500">$125.00</h2>
+						<span
+							class="fs-200 text-accent bg-accent"
+							style="
+								background-color: hsl(var(--clr-accent) / 0.15);
+								padding: 0.1em 0.5em;
+								border-radius: 0.3em;
+								margin-left: 0.2em;
+							"
+							>50%</span
+						>
+					</div>
+
+					<h3 class="fs-300 text-light-gray" style="text-decoration: line-through">$250.00</h3>
+				</div>
+				<div class="flex cta-group" style="font-weight: bold">
+					<div class="flex bg-light-gray quantity-btn">
+						<a href="javascript: void(0)" class="text-accent" id="decrease">-</a>
+						<span class="text-dark" id="count">1</span>
+						<a href="javascript: void(0)" class="text-accent" id="increase">+</a>
+					</div>
+					<div class="flex cta bg-accent pointer">
+						<img src="./images/icon-cart.svg" alt="cart icon" srcset="" />
+						<a href="#" class="text-light" style="font-weight: bold">Add to cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="attribution">
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+				Coded by <a href="#">Your Name Here</a>.
+			</div>
 		</div>
 	</body>
 </html>
