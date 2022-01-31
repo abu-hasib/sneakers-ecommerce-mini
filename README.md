@@ -18,7 +18,7 @@ A personal solution to the [E-commerce product page challenge on Frontend Mentor
 
 ## Overview
 
-Components to be used in this challenge are standard ones a user will expect on a e-commerce product showcase/checkout page.
+Components used in this challenge are standard ones a user will expect on a e-commerce product showcase/checkout page.
 
 ### The challenge
 
